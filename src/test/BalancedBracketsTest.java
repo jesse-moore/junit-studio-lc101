@@ -28,7 +28,6 @@ public class BalancedBracketsTest {
         assertFalse(BalancedBrackets.hasBalancedBrackets(" "));
     }
 
-
     @Test
     public void onlyOpeningBracketReturnsFalse() {
         assertFalse(BalancedBrackets.hasBalancedBrackets("["));
@@ -59,6 +58,14 @@ public class BalancedBracketsTest {
         assertTrue(BalancedBrackets.hasBalancedBrackets("123[456][789]"));
     }
 
+    @Test
+    public void ClosingBracketFirstWithOpeningBracketReturnsTrue() {
+        assertTrue(BalancedBrackets.hasBalancedBrackets("]["));
+    }
 
+    @Test
+    public void ClosingBracketFirstWithOpeningBracketAndLettersReturnsTrue() {
+        assertTrue(BalancedBrackets.hasBalancedBrackets("]abbskjhkjdhs["));
+    }
 
 }
