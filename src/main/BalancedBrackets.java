@@ -22,6 +22,8 @@ public class BalancedBrackets {
      * @return true if balanced, false otherwise
      */
     public static boolean hasBalancedBrackets(String str) {
+        if(str == null) return false;
+        if(str.isBlank()) return false;
         int brackets = 0;
         for (char ch : str.toCharArray()) {
             if (ch == '[') {
